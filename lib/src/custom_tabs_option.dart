@@ -103,8 +103,19 @@ class CustomTabsAnimation {
     _slideIn ??= const CustomTabsAnimation(
       startEnter: 'slide_in_right',
       startExit: 'slide_out_left',
+      endEnter: 'slide_in_left',
+      endExit: 'slide_out_right',
+    );
+    return _slideIn;
+  }
+
+    /// Create a built-in slide in animation.
+  factory CustomTabsAnimation.slideInCustom() {
+    _slideIn ??= const CustomTabsAnimation(
+      startEnter: '*slide_in_right',
+      startExit: 'none',//'slide_out_left',
       endEnter: 'android:anim/slide_in_left',
-      endExit: 'android:anim/slide_out_right',
+      endExit: 'none',//'android:anim/slide_out_right',
     );
     return _slideIn;
   }
@@ -119,6 +130,8 @@ class CustomTabsAnimation {
     );
     return _fade;
   }
+
+  static CustomTabsAnimation _slideInCustom;
 
   static CustomTabsAnimation _slideIn;
 
